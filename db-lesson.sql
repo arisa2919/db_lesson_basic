@@ -90,8 +90,6 @@ SELECT people.name, reports.content
 FROM people
 LEFT JOIN reports 
 ON people.person_id = reports.person_id
-WHERE people.person_id 
-NOT IN (
-  SELECT DISTINCT reports.person_id
-  FROM reports
-);
+WHERE content IS NULL;
+
+
